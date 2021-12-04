@@ -1,0 +1,37 @@
+package aoc{{.Year}}day{{.Day}}
+
+import (
+	_ "embed"
+	"fmt"
+
+	//"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
+)
+
+//go:embed input.txt
+var day{{.Day}}PuzzleInput string
+
+type Day{{.Day}} struct {
+	input string
+}
+
+func New() *Day{{.Day}} {
+	return &Day{{.Day}}{
+		input: day{{.Day}}PuzzleInput,
+	}
+}
+
+func (d *Day{{.Day}}) Solve() (string, error) {
+	return fmt.Sprintf(
+		`Day {{.Day}} Puzzle 1 Result: %d
+Day {{.Day}} Puzzle 2 Result: %d`,
+		0,
+		0), nil
+}
+
+func (d *Day{{.Day}}) puzzle1(puzzleInput []string) (int, error) {
+	return 0, nil
+}
+
+func (d *Day{{.Day}}) puzzle2(puzzleInput []string) (int, error) {
+	return 0, nil
+}
