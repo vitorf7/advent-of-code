@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/vitorf7/advent-of-code/2021/puzzle_helpers"
+	"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
 )
 
 //go:embed input.txt

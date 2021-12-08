@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vitorf7/advent-of-code/2021/puzzle_helpers"
+	"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
 )
 
 func TestDay1_puzzle1(t *testing.T) {
