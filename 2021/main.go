@@ -1,32 +1,33 @@
-package aoc2021
+package main
 
 import (
-	"fmt"
+	"log"
 
-	aoc2021day1 "github.com/vitorf7/advent-of-code/2021/day1"
-	aoc2021day2 "github.com/vitorf7/advent-of-code/2021/day2"
-	aoc2021day3 "github.com/vitorf7/advent-of-code/2021/day3"
+	"github.com/joho/godotenv"
+	"github.com/spf13/cobra"
+
+	downloadinput "github.com/vitorf7/advent-of-code/2021/cmd/download_input"
+	"github.com/vitorf7/advent-of-code/2021/cmd/results"
+	setuptemplate "github.com/vitorf7/advent-of-code/2021/cmd/setup_template"
 )
 
-// PuzzleSolver an interface for every puzzle
-type PuzzleSolver interface {
-	Solve() (string, error)
-}
-
-func PrintResults() {
-	puzzles := []PuzzleSolver{
-		aoc2021day1.New(),
-		aoc2021day2.New(),
-		aoc2021day3.New(),
+func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	fmt.Println("======= Advent of Code 2021 =======")
-	for _, puzzle := range puzzles {
-		result, err := puzzle.Solve()
-		if err != nil {
-			fmt.Printf("Error: %v\n", err)
-		}
+	root := &cobra.Command{
+		Use:   "advent-of-code",
+		Short: "Advent of Code",
+		Long:  "A repo to solve Advent of Code problems, download inputs and create base working files for the solutions",
+	}
 
-		fmt.Printf("%v\n", result)
+	root.AddCommand(setuptemplate.NewCommand())
+	root.AddCommand(downloadinput.NewCommand())
+	root.AddCommand(results.NewCommand())
+
+	if err := root.Execute(); err != nil {
+		log.Fatal(err)
 	}
 }

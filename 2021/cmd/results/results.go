@@ -6,12 +6,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	aoc2021 "github.com/vitorf7/advent-of-code/2021"
+	aoc2021 "github.com/vitorf7/advent-of-code/2021/exercises"
 )
 
-var (
-	year int
-)
+var year int
 
 // NewCommand creates a new cobra.Command for the results subcommand
 func NewCommand() *cobra.Command {

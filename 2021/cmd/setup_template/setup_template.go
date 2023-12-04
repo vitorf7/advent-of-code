@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	downloadinput "github.com/vitorf7/advent-of-code/cmd/download_input"
+	downloadinput "github.com/vitorf7/advent-of-code/2021/cmd/download_input"
 )
 
 var (

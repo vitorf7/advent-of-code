@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
+	"github.com/vitorf7/advent-of-code/2021/internal/puzzle_helpers"
 )
 
 func TestDay3_puzzle1(t *testing.T) {
@@ -54,7 +54,9 @@ func TestDay3_puzzle2(t *testing.T) {
 
 	puzzle := New()
 	puzzle.input = testInput
-	actualOxygenRating, actualCO2Rating, actualPowerLifeSupportRating, actualError := puzzle.puzzle2(puzzle_helpers.SplitStringToSlice(testInput, "\n"))
+	actualOxygenRating, actualCO2Rating, actualPowerLifeSupportRating, actualError := puzzle.puzzle2(
+		puzzle_helpers.SplitStringToSlice(testInput, "\n"),
+	)
 
 	assert.Equal(t, expectedOxygenRating, actualOxygenRating)
 	assert.Equal(t, expectedCO2Rating, actualCO2Rating)

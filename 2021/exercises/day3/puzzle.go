@@ -3,9 +3,8 @@ package aoc2021day3
 import (
 	_ "embed"
 	"fmt"
-	//"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
 
-	"github.com/vitorf7/advent-of-code/internal/puzzle_helpers"
+	"github.com/vitorf7/advent-of-code/2021/internal/puzzle_helpers"
 )
 
 //go:embed input.txt
